@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Eliminar Empleados
+{% endblock title %}
+
+{% block content %}
+
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h3 class="cell">Alerta</h3>
+        <form class="cell" method="POST">{% csrf_token %}
+            <div class="callout alert" data-closable>
+                <h5>Confirme que desea eliminar al empleado: {{ object.full_name }}?</h5>
+                <button type="submit" class="alert button">Confirmar</button>
+                <a aria-label="Dismiss alert" href="{% url 'persona_app:empleados_all_admin' %}"
+                    class="close-button">x</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

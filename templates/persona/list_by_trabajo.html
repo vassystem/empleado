@@ -1,0 +1,30 @@
+<h1>Lista de Empleados Por Trabajo</h1>
+<form method="GET">{% csrf_token %}
+    <select name="kword" required="" id="kword">
+
+        <option value="" selected="">---------</option>
+
+        <option value="0">Contador</option>
+
+        <option value="1">Administrador</option>
+
+        <option value="3">Economista</option>
+
+        <option value="4">Otro</option>
+
+    </select>
+    <button type="submit">Buscar</button>
+
+</form>
+
+<h3>Lista Resultados</h3>
+
+<u>
+
+    {% for e in object_list %}
+
+    <li>{{e}}</li>
+
+    {% endfor %}
+
+</u>
